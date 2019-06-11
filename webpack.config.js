@@ -27,7 +27,11 @@ var client = Object.assign({}, config, {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "build")
-    }
+    },
+    devtool: "source-map"
+    // optimization: {
+    //     runtimeChunk: true
+    // }
 });
 
 var server = Object.assign({}, config, {
@@ -38,7 +42,8 @@ var server = Object.assign({}, config, {
     output: {
         filename: "server.js",
         path: path.resolve(__dirname, "build")
-    }
+    },
+    devtool: "source-map"
 });
 
 module.exports = [client, server];
